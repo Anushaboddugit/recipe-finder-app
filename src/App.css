@@ -1,0 +1,24 @@
+/* App.css */
+
+/* Reset some browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Make sure app takes full screen height */
+html, body, #root, .App {
+  height: 100%;
+}
+
+/* Optional: background gradient for entire app */
+body {
+  background: linear-gradient(135deg, #f9f9f9, #ececec);
+}

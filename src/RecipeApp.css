@@ -1,0 +1,220 @@
+
+
+/* Container for search section */
+.app-container {
+  min-height: 100vh; /* full screen */
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* makes it stay while scrolling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.search-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Title */
+.search-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input + Select fields */
+.search-container input,
+.search-container select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  max-width: 250px;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+.search-container input:focus,
+.search-container select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76,175,80,0.4);
+}
+
+/* Button */
+.search-container button {
+  background: #4CAF50;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-container button:hover {
+  background: #45a049;
+}
+
+/* Flex layout for filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+/* Recipe card layout */
+.recipe-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.recipe-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  font-size: 18px;
+  margin: 12px;
+  color: #333;
+}
+
+.recipe-card p {
+  font-size: 14px;
+  margin: 0 12px 12px;
+  color: #666;
+}
+
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 items per row */
+  gap: 20px; /* space between cards */
+  margin: 20px auto; /* space top/bottom + center horizontally */
+  padding: 0 40px; /* ✅ left & right space */
+  max-width: 1200px; /* ✅ keeps grid centered and not stretched too wide */
+}
+
+
+.recipe-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px; /* fixed height */
+  object-fit: cover;
+  border-radius: 10px;
+}
+.view-recipe {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color:  #4CAF50;  /* purple button */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.view-recipe:hover {
+  background-color: #3726d8;   /* darker purple on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  text-decoration: none;
+}
+
+/* 🌍 Default: Large screens (desktop) */
+.search-container {
+  max-width: 900px;
+  width: 90%;
+}
+
+.recipes-grid {
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+}
+
+/* 🖥 Medium screens (tablets, <1024px) */
+@media (max-width: 1024px) {
+  .search-container {
+    max-width: 700px;
+    padding: 20px;
+  }
+
+  .recipes-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+/* 📱 Small screens (phones, <600px) */
+@media (max-width: 600px) {
+  .search-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-container input,
+  .search-container select,
+  .search-container button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .recipes-grid {
+    grid-template-columns: 1fr; /* 1 per row */
+    padding: 15px;
+  }
+
+  .recipe-card img {
+    height: 160px; /* smaller images on mobile */
+  }
+}
+
+
